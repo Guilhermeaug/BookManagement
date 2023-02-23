@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      schema: book_management
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  flyway:
+    user: user
+    password: password
+    schemas: book_management
+    url: jdbc:postgresql://localhost:5432/db
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+              BasicExtractor: TRACE
